@@ -4,8 +4,8 @@
   <Description>Makes the entire game more challenging by dynamically generating movesets for all Pokémon and applying special modifiers or weathers during dungeon runs.</Description>
   <Namespace>pmdo_hard_mode</Namespace>
   <UUID>D8BDD3B2-8B75-4700-A70B-455D7A31E15F</UUID>
-  <Version>0.0</Version>
-  <GameVersion>0.0</GameVersion>
+  <Version>1.0</Version>
+  <GameVersion>0.8.12.0</GameVersion>
   <ModType>Mod</ModType>
   <Relationships>
     <RelatedMod>
