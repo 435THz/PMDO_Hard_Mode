@@ -19,5 +19,6 @@ Here is a list of all features of the mod. All of these can be toggled at any ti
  - When generating a new moveset for higher level Pokémon, the game may freeze for a moment. Hopefully it won't be too big of an issue during gameplay.
 
 ### Future plans
+ - Optionally reset to spawn moveset upon recruit
  - Add more floor weathers
- - Level Cap Mode
+ - Level Cap setting
