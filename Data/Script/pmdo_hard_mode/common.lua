@@ -252,7 +252,12 @@ HARD_MODE.assignStrongerMoves = function(chara)
     end
     local prevSetString = prevSet.set[1]..prevSet.set[2]..prevSet.set[3]..prevSet.set[4]..prevSet.enabled
 
-    if SV.Hard_Mode_Settings.AllMovesEnabled ~= 0 then prevSet.enabled = 4 end
+    if SV.Hard_Mode_Settings.AllMovesEnabled ~= 0 then
+        prevSet.enabled = 4
+        for i=0, 3, 1 do
+            chara.Skills[i].Element.Enabled =true
+        end
+    end
 
     if SV.hard_mode_processed.Moves[chara.BaseForm.Species] and SV.hard_mode_processed.Moves[chara.BaseForm.Species][chara.BaseForm.Form] and SV.hard_mode_processed.Moves[chara.BaseForm.Species][chara.BaseForm.Form][prevSetString] then
         -- Assign moves that were previously rolled
