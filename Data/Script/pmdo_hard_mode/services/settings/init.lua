@@ -8,8 +8,8 @@ function HardModeSettings:initialize()
             "MovesetLevelShift",
             "AllowEggMovesAtLowLevel",
             "ChangeMovesEveryFloor",
-            "IncreaseAISmartness",
             "AllMovesEnabled",
+            "IncreaseAISmartness",
             "IncreaseStats",
             "DungeonEffects",
             --"PermanentLevelCap"
@@ -19,8 +19,8 @@ function HardModeSettings:initialize()
             MovesetLevelShift = "Moveset Level Bonus",
             AllowEggMovesAtLowLevel = "Low Level Egg Moves",
             ChangeMovesEveryFloor = "Floor Only Movesets",
-            IncreaseAISmartness = "Smarter Enemies",
             AllMovesEnabled = "All Moves Enabled",
+            IncreaseAISmartness = "Smarter Enemies",
             IncreaseStats = "Stat Increases",
             DungeonEffects = "Floor Weathers",
             --PermanentLevelCap = "Permanent Level Cap"
