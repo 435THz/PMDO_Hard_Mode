@@ -5,23 +5,16 @@ ZONE_GEN_SCRIPT.ApplyHardMode = function(zoneContext, context, queue, seed, args
 
     activeEffect.OnMapStarts:Add(priority_gen, RogueEssence.Dungeon.SingleCharScriptEvent("HardModeProcessCharacter", '{}'))
 
-
     local hardmode_floor_step = LUA_ENGINE:MakeGenericType(HARD_MODE.globals.ctypes.ScriptGenStep, { MapGenContextType }, {"HardModeProcessFloor"})
     hardmode_floor_step.Script = "HardModeProcessFloor"
     queue:Enqueue(priority_gen, hardmode_floor_step)
-
-
-
-
 
     local destNote = LUA_ENGINE:MakeGenericType(MapEffectStepType, { MapGenContextType }, { activeEffect })
     queue:Enqueue(priority_gen, destNote)
 end
 
 FLOOR_GEN_SCRIPT.HardModeProcessFloor = function(map, args)
-    if map.Map.Status:Remove("default_weather") then
-        print("holy shit it's happening")
-    end
+    map.Map.Status:Remove("default_weather")
     HARD_MODE.loadLocation(map.Map)
 
     local rand = _DATA.Save.Rand:Next(100)+1
@@ -41,7 +34,7 @@ FLOOR_GEN_SCRIPT.HardModeProcessFloor = function(map, args)
         end
     end
 
-    print(chosenStatus)
+    --print(chosenStatus)
     local SetterID = "default_mapstatus"
     local statusSetter = RogueEssence.Dungeon.MapStatus(SetterID)
     statusSetter:LoadFromData()

@@ -302,8 +302,8 @@ HARD_MODE.assignStrongerMoves = function(chara)
     end
 
     local moveset = SV.hard_mode_processed.Moves[chara.BaseForm.Species][chara.BaseForm.Form][prevSetString]
-	PrintInfo("Moveset assigned to: "..chara.Name.." - Lv"..chara.Level.."\n"..
-        print_generated..": "..moveset[1].." - "..moveset[2].." - "..moveset[3].." - "..moveset[4])
+	-- PrintInfo("Moveset assigned to: "..chara.Name.." - Lv"..chara.Level.."\n"..
+    --    print_generated..": "..moveset[1].." - "..moveset[2].." - "..moveset[3].." - "..moveset[4])
 end
 
 --- Dynamically builds a boss moveset and assigns it to a character.
