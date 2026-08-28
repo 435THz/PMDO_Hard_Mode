@@ -181,9 +181,9 @@ HARD_MODE.loadLocation = function(map)
             end
             local average = total/amount
             diff_k = diff_k + math.floor(math.max(0, (average-zoneSummary.Level))/5)
-            SV.hard_mode_processed.Location.DiffValue = math.floor(diff_k*diff_mult)
-            print("Dungeon difficulty coefficient: "..SV.hard_mode_processed.Location.DiffValue)
+            -- print("Dungeon difficulty coefficient: "..SV.hard_mode_processed.Location.DiffValue)
         end
+        SV.hard_mode_processed.Location.DiffValue = math.floor(diff_k*diff_mult)
     end
 
     SV.hard_mode_processed.Location.Zone = curr_zone
