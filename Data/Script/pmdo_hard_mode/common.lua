@@ -71,7 +71,7 @@ HARD_MODE.FloorWeathers = {
 	rock = "sandstorm",
     steel = nil, --TODO magnetic terrain
 	water = "rain",
-	typeless = "cloudy"
+	typeless = "clouds_overhead"
 	-- type weather effect chance: 2/3
 }
 HARD_MODE.WeatherChances = {
