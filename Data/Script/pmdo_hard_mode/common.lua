@@ -359,16 +359,20 @@ HARD_MODE.assignBossMoves = function(chara, tm_allowed, tutor_allowed, egg_allow
     local halfPP = false
     if chara.Fullness < 50 then halfPP = true end
     -- apply the moves to the character in move_slot order
-    for i, slot_type in pairs(move_slots) do
+    local j = 1
+    for _, slot_type in pairs(move_slots) do
         local move = slot_to_moves[slot_type][1] --FIFO
-        if move == "" then
-            move_list[i] = ""
-        else
-            chara:ReplaceSkill(move, i - 1, true)
-            if halfPP then chara.Skills[i-1].Element.Charges = math.floor(chara.Skills[i-1].Element.Charges/2) end
-            move_list[i] = move
+        if move ~= "" then
+            chara:ReplaceSkill(move, j - 1, true)
+            if halfPP then chara.Skills[j-1].Element.Charges = math.floor(chara.Skills[j-1].Element.Charges/2) end
+            move_list[j] = move
+            j=j+1
         end
         table.remove(slot_to_moves[slot_type], 1) --the slot to moves list gets progressively emptied out
+    end
+    while j<4 do
+        move_list[j] = ""
+        j=j+1
     end
     return shuffled_slots, move_list
 end
