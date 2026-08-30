@@ -5,7 +5,13 @@ ZONE_GEN_SCRIPT.ApplyHardMode = function(zoneContext, context, queue, seed, args
 
     activeEffect.OnMapStarts:Add(priority_gen, RogueEssence.Dungeon.SingleCharScriptEvent("HardModeProcessCharacter", '{}'))
 
-    local hardmode_floor_step = LUA_ENGINE:MakeGenericType(HARD_MODE.globals.ctypes.ScriptGenStep, { MapGenContextType }, {"HardModeProcessFloor"})
+    if LUA_ENGINE:TypeOf(context) ~= luanet.ctype(HARD_MODE.globals.ctypes.MapGenContext) and 
+            LUA_ENGINE:TypeOf(context) ~= luanet.ctype(HARD_MODE.globals.ctypes.StairsMapGenContext) and
+            LUA_ENGINE:TypeOf(context) ~= luanet.ctype(HARD_MODE.globals.ctypes.ListMapGenContext) then
+        return
+    end
+
+    local hardmode_floor_step = LUA_ENGINE:MakeGenericType(HARD_MODE.globals.ctypes.ScriptGenStep, { HARD_MODE.globals.ctypes.ListMapGenContext }, {"HardModeProcessFloor"})
     hardmode_floor_step.Script = "HardModeProcessFloor"
     queue:Enqueue(priority_gen, hardmode_floor_step)
 
