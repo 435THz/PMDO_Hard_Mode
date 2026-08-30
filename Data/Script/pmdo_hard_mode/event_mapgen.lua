@@ -15,7 +15,7 @@ ZONE_GEN_SCRIPT.ApplyHardMode = function(zoneContext, context, queue, seed, args
     hardmode_floor_step.Script = "HardModeProcessFloor"
     queue:Enqueue(priority_gen, hardmode_floor_step)
 
-    local destNote = LUA_ENGINE:MakeGenericType(MapEffectStepType, { MapGenContextType }, { activeEffect })
+    local destNote = LUA_ENGINE:MakeGenericType(MapEffectStepType, { HARD_MODE.globals.ctypes.ListMapGenContext }, { activeEffect })
     queue:Enqueue(priority_gen, destNote)
 end
 
@@ -26,7 +26,7 @@ FLOOR_GEN_SCRIPT.HardModeProcessFloor = function(map, args)
     local rand = _DATA.Save.Rand:Next(100)+1
     if (SV.Hard_Mode_Settings.DungeonEffects == 0) or (SV.hard_mode_processed.Location.DiffValue*4 <= rand) then return end
     local chosen = HARD_MODE.weightedRandom(HARD_MODE.WeatherChances, true)
-    local chosenStatus = "clear"
+    local chosenStatus = {status = "clear", weather = true}
 
     if chosen then
         if chosen.weather == "floor" then
@@ -36,15 +36,16 @@ FLOOR_GEN_SCRIPT.HardModeProcessFloor = function(map, args)
                 chosenStatus = HARD_MODE.FloorWeathers["typeless"]
             end
         else
-            chosenStatus = chosen.weather
+            chosenStatus = {status = chosen.weather, weather = false}
         end
     end
-
+    ---@cast chosenStatus -?
     --print(chosenStatus)
     local SetterID = "default_mapstatus"
+    if chosenStatus.weather then SetterID = "default_weather" end
     local statusSetter = RogueEssence.Dungeon.MapStatus(SetterID)
     statusSetter:LoadFromData()
     local indexState = statusSetter.StatusStates:GetWithDefault(luanet.ctype(HARD_MODE.globals.ctypes.MapIDState))
-    indexState.ID = chosenStatus
+    indexState.ID = chosenStatus.status
     map.Map.Status:Add(SetterID, statusSetter)
 end

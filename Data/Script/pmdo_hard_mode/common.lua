@@ -54,27 +54,28 @@ HARD_MODE.AIUpgrade = {
     weird_tree = "weird_tree_smart"           -- smart action pick when approached
 }
 
+---@type ({status:string, weather:boolean}?)[]
 HARD_MODE.FloorWeathers = {
 	-- weather chance: 4*difficulty coefficient
 	bug = nil, --TODO
-    dark = "dark", --TODO insurgence darkness
+    dark = {status = "dark", weather = false}, --TODO insurgence darkness
     dragon = nil, --TODO
-    electric = "electric_terrain",
-	fairy = "misty_terrain",
-	fire = "sunny",
-	flying = "wind",
+    electric = {status = "electric_terrain", weather = true},
+	fairy = {status = "misty_terrain", weather = true},
+	fire = {status = "sunny", weather = true},
+	flying = {status = "wind", weather = true},
     fighting = nil, --TODO
-	grass = "grassy_terrain",
-	ground = "sandstorm",
-    ghost = "dark", --TODO
-	ice = "hail",
-	normal = "cloudy",
-	psychic = "psychic_terrain",
+	grass = {status = "grassy_terrain", weather = true},
+	ground = {status = "sandstorm", weather = true},
+    ghost = {status = "dark", weather = false}, --TODO
+	ice = {status = "hail", weather = true},
+	normal = {status = "cloudy", weather = true},
+	psychic = {status = "psychic_terrain", weather = true},
     poison = nil, --TODO
-	rock = "sandstorm",
+	rock = {status = "sandstorm", weather = true},
     steel = nil, --TODO magnetic terrain
-	water = "rain",
-	typeless = "clouds_overhead"
+	water = {status = "rain", weather = true},
+	typeless = {status = "clouds_overhead", weather = false},
 	-- type weather effect chance: 2/3
 }
 HARD_MODE.WeatherChances = {
