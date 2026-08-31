@@ -1,0 +1,33 @@
+﻿{
+"Version": "0.8.12.0",
+"Object": {
+"$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
+"dusty_terrain": {
+"Name": {
+"DefaultText": "Dusty Terrain",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"darkness": {
+"Name": {
+"DefaultText": "Darkness",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"acid_rain": {
+"Name": {
+"DefaultText": "Acid Rain",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+}
+}
+}

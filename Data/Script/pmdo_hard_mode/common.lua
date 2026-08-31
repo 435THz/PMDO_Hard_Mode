@@ -13,7 +13,8 @@ HARD_MODE.globals.ctypes.Integer = luanet.import_type('System.Int32')
 HARD_MODE.globals.ctypes.ScriptGenStep = luanet.import_type('RogueEssence.LevelGen.ScriptGenStep`1')
 HARD_MODE.globals.ctypes.MapGenContext = luanet.import_type('RogueEssence.LevelGen.MapGenContext')
 HARD_MODE.globals.ctypes.ListMapGenContext = MapGenContextType or luanet.import_type('RogueEssence.LevelGen.ListMapGenContext')
-HARD_MODE.globals.ctypes.MapIDState = luanet.import_type("RogueEssence.Dungeon.MapIDState")
+HARD_MODE.globals.ctypes.ContactState = luanet.import_type('PMDC.Dungeon.ContactState')
+HARD_MODE.globals.ctypes.MapIDState = luanet.import_type('RogueEssence.Dungeon.MapIDState')
 HARD_MODE.globals.ctypes.StatusPowerEvent = luanet.import_type('PMDC.Dungeon.StatusPowerEvent')
 HARD_MODE.globals.ctypes.StatusStackDifferentEvent = luanet.import_type('PMDC.Dungeon.StatusStackDifferentEvent')
 HARD_MODE.globals.ctypes.MajorStatusPowerEvent = luanet.import_type('PMDC.Dungeon.StatusPowerEvent')
@@ -57,20 +58,20 @@ HARD_MODE.AIUpgrade = {
 HARD_MODE.FloorWeathers = {
 	-- weather chance: 4*difficulty coefficient
 	bug = {status = "grassy_terrain", weather = true},
-    dark = {status = "dark", weather = false}, --TODO insurgence darkness
+    dark = {status = "darkness", weather = true},
     dragon = {status = "wind", weather = true},
     electric = {status = "electric_terrain", weather = true},
 	fairy = {status = "misty_terrain", weather = true},
 	fire = {status = "sunny", weather = true},
 	flying = {status = "wind", weather = true},
-    fighting = nil, --TODO
+    fighting = {status = "dusty_terrain", weather = true},
 	grass = {status = "grassy_terrain", weather = true},
 	ground = {status = "sandstorm", weather = true},
-    ghost = {status = "dark", weather = false}, --TODO
+    ghost = {status = "darkness", weather = true},
 	ice = {status = "hail", weather = true},
 	normal = {status = "cloudy", weather = true},
 	psychic = {status = "psychic_terrain", weather = true},
-    poison = nil, --TODO
+    poison = {status = "acid_rain", weather = true},
 	rock = {status = "sandstorm", weather = true},
     steel = nil, --TODO magnetic terrain
 	water = {status = "rain", weather = true},
