@@ -178,7 +178,7 @@ HARD_MODE.loadLocation = function(map)
             local total = 0
             local amount = 0
             for char in luanet.each(LUA_ENGINE:MakeList(map:IterateCharacters(false, true))) do
-                if char.MemberTeam.MapFaction ~= RogueEssence.Dungeon.Faction.Player then
+                if char.MemberTeam.MapFaction == RogueEssence.Dungeon.Faction.Foe then
                     total = total + char.Level
                     amount = amount + 1
                 end
