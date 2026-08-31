@@ -20,5 +20,5 @@ Here is a list of all features of the mod. All of these can be toggled at any ti
 
 ### Future plans
  - Optionally reset to spawn moveset upon recruit
- - Add more floor weathers
+ - Add missing floor weathers
  - Level Cap setting
