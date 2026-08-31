@@ -270,6 +270,7 @@ HARD_MODE.assignStrongerMoves = function(chara)
             chara:DeleteSkill(0)
         end
         local halfPP = false
+        if chara.Fullness < 50 then halfPP = true end
         for i, move in pairs(SV.hard_mode_processed.Moves[chara.BaseForm.Species][chara.BaseForm.Form][prevSetString]) do
             if move ~= "" then
                 local enabled = true
