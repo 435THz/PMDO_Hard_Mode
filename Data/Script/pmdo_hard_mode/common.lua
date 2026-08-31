@@ -57,9 +57,9 @@ HARD_MODE.AIUpgrade = {
 ---@type ({status:string, weather:boolean}?)[]
 HARD_MODE.FloorWeathers = {
 	-- weather chance: 4*difficulty coefficient
-	bug = nil, --TODO
+	bug = {status = "grassy_terrain", weather = true},
     dark = {status = "dark", weather = false}, --TODO insurgence darkness
-    dragon = nil, --TODO
+    dragon = {status = "wind", weather = true},
     electric = {status = "electric_terrain", weather = true},
 	fairy = {status = "misty_terrain", weather = true},
 	fire = {status = "sunny", weather = true},
