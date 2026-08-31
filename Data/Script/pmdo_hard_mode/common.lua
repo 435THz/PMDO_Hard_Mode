@@ -12,7 +12,6 @@ HARD_MODE.globals.ctypes = {}
 HARD_MODE.globals.ctypes.Integer = luanet.import_type('System.Int32')
 HARD_MODE.globals.ctypes.ScriptGenStep = luanet.import_type('RogueEssence.LevelGen.ScriptGenStep`1')
 HARD_MODE.globals.ctypes.MapGenContext = luanet.import_type('RogueEssence.LevelGen.MapGenContext')
-HARD_MODE.globals.ctypes.StairsMapGenContext = luanet.import_type('RogueEssence.LevelGen.StairsMapGenContext')
 HARD_MODE.globals.ctypes.ListMapGenContext = MapGenContextType or luanet.import_type('RogueEssence.LevelGen.ListMapGenContext')
 HARD_MODE.globals.ctypes.MapIDState = luanet.import_type("RogueEssence.Dungeon.MapIDState")
 HARD_MODE.globals.ctypes.StatusPowerEvent = luanet.import_type('PMDC.Dungeon.StatusPowerEvent')
