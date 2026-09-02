@@ -32,7 +32,7 @@ function HardModeSettings:OnAddMenu(menu)
     if RogueEssence.GameManager.Instance.CurrentScene == RogueEssence.Dungeon.DungeonScene.Instance then return end
     if menu:HasLabel() and menu.Label == RogueEssence.Menu.MenuLabel.SETTINGS_MENU then
         local page = menu:AddPage("hard_mode", "Hard Mode")
-        if not HARD_MODE.Settings then HARD_MODE.loadSettings() end
+        HARD_MODE.loadSettings()
         local options_boolean = {"Off", "On"}
         local options_level = {"Off", "+5", "+10", "+15", "+20", "+25", "+30", "+35", "+40", "+45", "+50", "+55", "+60", "+65", "+70", "+75", "+80", "+85", "+90", "+95", "+100"}
         local saveFunction = function(setting_obj, setting_name)
