@@ -30,6 +30,7 @@ end
 
 function HardModeSettings:OnAddMenu(menu)
     if RogueEssence.GameManager.Instance.CurrentScene == RogueEssence.Dungeon.DungeonScene.Instance then return end
+    if (not menu.InGame) and HARD_MODE.HasQuicksave() then return end
     if menu:HasLabel() and menu.Label == RogueEssence.Menu.MenuLabel.SETTINGS_MENU then
         local page = menu:AddPage("hard_mode", "Hard Mode")
         HARD_MODE.loadSettings()

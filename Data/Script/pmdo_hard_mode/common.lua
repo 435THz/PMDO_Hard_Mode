@@ -121,6 +121,11 @@ HARD_MODE.loadSetting = function(setting, default)
     end
 end
 
+function HARD_MODE.HasQuicksave()
+    local recordDir = RogueEssence.PathMod.ModSavePath(RogueEssence.Data.DataManager.SAVE_PATH, RogueEssence.Data.DataManager.QUICKSAVE_FILE_PATH);
+    return System.IO.File.Exists(recordDir)
+end
+
 ---@param chara any the Character to build.
 HARD_MODE.applySpawnEffects = function(chara)
     HARD_MODE.loadLocation()
