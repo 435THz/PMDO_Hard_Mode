@@ -305,7 +305,7 @@ HARD_MODE.assignStrongerMoves = function(chara)
         local tutnum = math.max(0, math.floor((k-5)/20))
         local egnum  = math.max(0, math.min(k-30, 1))
         if SV.Hard_Mode_Settings.AllowEggMovesAtLowLevel ~= 0 then egnum = 1 end
-        local _, moves = HARD_MODE.assignBossMoves(chara, tmnum, tutnum, egnum, {})
+        local _, moves = HARD_MODE.assignBossMoves(chara, tmnum, tutnum, egnum, {sleep_talk = true})
         SV.hard_mode_processed.Moves[chara.BaseForm.Species][chara.BaseForm.Form][prevSetString] = moves
 
         local numEnabled = 0
