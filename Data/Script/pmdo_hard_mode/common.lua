@@ -76,14 +76,14 @@ HARD_MODE.FloorWeathers = {
     steel = nil, --TODO magnetic terrain
 	water = {status = "rain", weather = true},
 	typeless = {status = "clouds_overhead", weather = false},
-	-- type weather effect chance: 2/3
+	-- type weather effect chance: 4/5
 }
 HARD_MODE.WeatherChances = {
-    {weather = "floor", weight = 20},
-    {weather = "trick_room", weight = 4},
-    {weather = "wonder_room", weight = 3},
-    {weather = "magic_room", weight = 2},
-    {weather = "inverse", weight = 1}
+    {weather = "floor",       weight = 40},
+    {weather = "wonder_room", weight = 4},
+    {weather = "inverse",     weight = 3},
+    {weather = "trick_room",  weight = 2},
+    {weather = "magic_room",  weight = 1}
 }
 
 local settingsList = {
