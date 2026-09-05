@@ -476,7 +476,9 @@ HARD_MODE.filterMoveset = function(chara, tm_allowed, tutor_allowed, egg_allowed
                                 local PowerStateType = luanet.import_type('RogueEssence.Dungeon.BasePowerState')
                                 local power = skillData.Data.SkillStates:GetWithDefault(luanet.ctype(PowerStateType))
                                 if power and power.Power>0 then power = power.Power else power = 40 end
-                                local weight = power * skillData.Strikes * attackStats[category]
+                                local hitRateModifier = 1.15
+                                if skillData.Data.HitRate >=0 then hitRateModifier = (100+skillData.Data.HitRate)/200 end
+                                local weight = power * skillData.Strikes * attackStats[category] * hitRateModifier
                                 if types[1] == skillData.Data.Element or types[2] == skillData.Data.Element then
                                     weight = math.floor(weight*1.5)
                                     table.insert(subtables, "stab")
