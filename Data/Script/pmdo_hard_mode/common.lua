@@ -200,6 +200,11 @@ HARD_MODE.loadLocation = function(map)
     SV.hard_mode_processed.Location.Floor = curr_floor
 end
 
+HARD_MODE.GetFloorWeatherChance = function()
+    local divisor = SV.hard_mode_processed.Location.DiffValue+10
+    return math.floor((-1000/divisor)+100)
+end
+
 ---@param chara any the Character to build.
 HARD_MODE.boostStats = function(chara)
     if SV.Hard_Mode_Settings.IncreaseStats == 0 then return end

@@ -23,7 +23,8 @@ FLOOR_GEN_SCRIPT.HardModeProcessFloor = function(map, args)
     HARD_MODE.loadLocation(map.Map)
 
     local rand = _DATA.Save.Rand:Next(100)+1
-    if (SV.Hard_Mode_Settings.DungeonEffects == 0) or (SV.hard_mode_processed.Location.DiffValue*4 <= rand) then return end
+    local weather_chance = HARD_MODE.GetFloorWeatherChance()
+    if (SV.Hard_Mode_Settings.DungeonEffects == 0) or (weather_chance <= rand) then return end
     local chosen = HARD_MODE.weightedRandom(HARD_MODE.WeatherChances, true)
     local chosenStatus = {status = "clear", weather = true}
 
