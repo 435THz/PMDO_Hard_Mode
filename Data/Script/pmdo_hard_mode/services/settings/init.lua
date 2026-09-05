@@ -6,7 +6,6 @@ function HardModeSettings:initialize()
         self.settingsList = {
             "UpgradeMovesets",
             "MovesetLevelShift",
-            "AllowEggMovesAtLowLevel",
             "ChangeMovesEveryFloor",
             "AllMovesEnabled",
             "IncreaseAISmartness",
@@ -17,7 +16,6 @@ function HardModeSettings:initialize()
         self.settingsData = {
             UpgradeMovesets = "Upgrade Movesets",
             MovesetLevelShift = "Moveset Level Bonus",
-            AllowEggMovesAtLowLevel = "Low Level Egg Moves",
             ChangeMovesEveryFloor = "Floor Only Movesets",
             AllMovesEnabled = "All Moves Enabled",
             IncreaseAISmartness = "Smarter Enemies",
@@ -62,6 +60,9 @@ function HardModeSettings:OnSaveLoad()
         for _, val in ipairs(self.settingsList) do
             SV.Hard_Mode_Settings[val] = HARD_MODE.Settings[val]
         end
+    end
+    if SV.Hard_Mode_Settings.AllowEggMovesAtLowLevel ~= nil then
+        SV.Hard_Mode_Settings.AllowEggMovesAtLowLevel = nil
     end
     HARD_MODE.Settings = nil
 end

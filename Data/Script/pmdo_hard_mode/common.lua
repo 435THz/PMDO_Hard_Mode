@@ -89,7 +89,6 @@ HARD_MODE.WeatherChances = {
 local settingsList = {
     UpgradeMovesets = 1,             -- if true, roll random powerful movesets for spawned pokémon
     MovesetLevelShift = 0,           -- let the moveset generator access moves that are this number of levels away from the pokémon's current level.
-    AllowEggMovesAtLowLevel = 0,     -- if true, all pokémon have access to egg moves. If false, only mons above lv30 will.
     ChangeMovesEveryFloor = 0,       -- if true, movesets are rerolled at every floor. If false, they are rerolled only after beginning a new adventure
     AllMovesEnabled = 1,             -- if true, pokémon that are spawned with a limited number of enabled slots will instead have all move slots enabled
     IncreaseAISmartness = 0,         -- if true, enemy ai will be upgraded to a higher smartness one at spawn
@@ -303,8 +302,7 @@ HARD_MODE.assignStrongerMoves = function(chara)
         local k = chara.Level
         local tmnum  = math.max(0, math.floor((k-10)/10))
         local tutnum = math.max(0, math.floor((k-5)/20))
-        local egnum  = math.max(0, math.min(k-30, 1))
-        if SV.Hard_Mode_Settings.AllowEggMovesAtLowLevel ~= 0 then egnum = 1 end
+        local egnum  = 1
         local _, moves = HARD_MODE.assignBossMoves(chara, tmnum, tutnum, egnum, {sleep_talk = true})
         SV.hard_mode_processed.Moves[chara.BaseForm.Species][chara.BaseForm.Form][prevSetString] = moves
 
